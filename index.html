@@ -1,15 +1,28 @@
 <!DOCTYPE HTML>
-<!--
-    Miniport by HTML5 UP
-    html5up.net | @ajlkn
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 <head>
-    <title>Miniport by HTML5 UP</title>
+    <title>About Me Animation</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation class */
+        .about-me-animation {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+    </style>
 </head>
 <body class="is-preload">
 
@@ -17,14 +30,14 @@
     <nav id="nav">
         <ul class="container">
             <li><a href="#top">Top</a></li>
-            <li><a href="#about-me">About Me</a></li>
+            <li><a href="#about">About Me</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Home -->
-    <article id="top" class="wrapper style1" style="background-color: white; color: black;">
+    <!-- About Me -->
+    <article id="about" class="wrapper style1 about-me-animation" style="background-color: white; color: black;">
         <div class="container">
             <div class="row">
                 <div class="col-4 col-5-large col-12-medium">
@@ -34,78 +47,13 @@
                     <header>
                         <h1>Hi. I'm <strong>Xin Yee</strong>.</h1>
                     </header>
-                    <p>My name is Teoh Xin Yee, and I’m a Year 1 Semester 1 student pursuing a Bachelor of Computer Science in Data Engineering. Currently, I’m diving into C++ programming as part of my studies. In my free time, I love indulging in delicious food and swimming to stay active and refreshed.</p>
+                    <p>
+                        My name is Teoh Xin Yee, and I’m a Year 1 Semester 1 student pursuing a Bachelor of Computer Science in Data Engineering. 
+                        Currently, I’m diving into C++ programming as part of my studies. 
+                        In my free time, I love indulging in delicious food and swimming to stay active and refreshed.
+                    </p>
                 </div>
             </div>
-        </div>
-    </article>
-
-    <!-- About Me -->
-    <article id="about-me" class="wrapper style2">
-        <div class="container">
-            <header>
-                <h2>About Me</h2>
-                <p>Education, Position, and Skills</p>
-            </header>
-            <div class="row aln-center">
-                <div class="col-4 col-6-medium col-12-small">
-                    <section class="box style1">
-                        <span class="icon solid featured fa-graduation-cap"></span>
-                        <h3>Education</h3>
-                        <p class="tooltip-trigger">Hover to view details</p>
-                        <div class="tooltip-content">
-                            🎒 <strong>Primary School 📖</strong><br>
-                            School: SJK(C) Nam Hua<br>
-                            Location: Tanjung Piandang, Perak<br>
-                            Years: 2012 - 2017<br><br>
-
-                            🏫 <strong>Secondary School 🧠</strong><br>
-                            School: SMJK Krian<br>
-                            Location: Parit Buntar, Perak<br>
-                            Years: 2018 - 2022<br><br>
-
-                            🔬 <strong>Foundation in Physical Science 🌌</strong><br>
-                            Institution: SPACE UTM<br>
-                            Location: Skudai, Johor<br>
-                            Years: 2023 - 2024<br><br>
-
-                            🎓 <strong>University Studies 💻</strong><br>
-                            University: Universiti Teknologi Malaysia (UTM)<br>
-                            Location: Skudai, Johor<br>
-                            Years: 2024 - Present<br>
-                            Program: Bachelor of Computer Science (Data Engineering)
-                        </div>
-                    </section>
-                </div>
-
-                <div class="col-4 col-6-medium col-12-small">
-                    <section class="box style1">
-                        <span class="icon solid featured fa-briefcase"></span>
-                        <h3>Position</h3>
-                        <p class="tooltip-trigger">Hover to view details</p>
-                        <div class="tooltip-content">
-                            🏫 <strong>Secondary School Leadership Roles</strong><br>
-                            - Vice Chairman of Lembaga Pengawas Pusat Sumber 📖<br>
-                            - Secretary of Bulan Sabit Merah Malaysia (BSMM) 🩺<br><br>
-
-                            🎓 <strong>Current Position</strong><br>
-                            - Year 1 Semester 1 Bachelor of Computer Science (Data Engineering) Student<br>
-                        </div>
-                    </section>
-                </div>
-
-                <div class="col-4 col-6-medium col-12-small">
-                    <section class="box style1">
-                        <span class="icon solid featured fa-tools"></span>
-                        <h3>Skills</h3>
-                        <p>Proficient in C++, Canva, data analysis, and AI applications.</p>
-                    </section>
-                </div>
-            </div>
-            <footer>
-                <p>Want to know more?</p>
-                <a href="#projects" class="button large scrolly">Check out my projects</a>
-            </footer>
         </div>
     </article>
 
@@ -113,86 +61,35 @@
     <article id="projects" class="wrapper style3">
         <div class="container">
             <header>
-                <h2>Here’s some subjects I am currently studying.</h2>
+                <h2>Here’s some projects I’m currently working on.</h2>
                 <p>YEAR 1 SEMESTER 1</p>
             </header>
             <div class="row">
                 <div class="col-4 col-6-medium col-12-small">
                     <article class="box style2">
                         <a href="#" class="image featured"><img src="image/photo02.jpg" alt="" /></a>
-                        <h3><a href="#">Discrete Structure</a></h3>
+                        <h3><a href="#">Project 1: Discrete Structure</a></h3>
                     </article>
                 </div>
                 <div class="col-4 col-6-medium col-12-small">
                     <article class="box style2">
                         <a href="#" class="image featured"><img src="image/photodl.jpg" width="462px" height="255px" alt="" /></a>
-                        <h3><a href="#">Digital Logic</a></h3>
+                        <h3><a href="#">Project 2: Digital Logic</a></h3>
                     </article>
                 </div>
                 <div class="col-4 col-6-medium col-12-small">
                     <article class="box style2">
                         <a href="#" class="image featured"><img src="image/phototis.jpg" width="462px" height="255px" alt="" /></a>
-                        <h3><a href="#">Technology and Information System</a></h3>
+                        <h3><a href="#">Project 3: Tech & Info System</a></h3>
                     </article>
                 </div>
                 <div class="col-4 col-6-medium col-12-small">
                     <article class="box style2">
                         <a href="#" class="image featured"><img src="image/photopt1.jpg" width="462px" height="255px" alt="" /></a>
-                        <h3><a href="#">Programming Technique--C++</a></h3>
+                        <h3><a href="#">Project 4: Programming C++</a></h3>
                     </article>
                 </div>
             </div>
-        </div>
-    </article>
-
-    <!-- Contact -->
-    <article id="contact" class="wrapper style4" style="background-color: black; color: white;">
-        <div class="container medium">
-            <header>
-                <h2>Have me make stuff for you.</h2>
-                <p>Let’s get in touch!</p>
-            </header>
-            <div class="row">
-                <div class="col-12">
-                    <form method="post" action="#">
-                        <div class="row">
-                            <div class="col-6 col-12-small">
-                                <input type="text" name="name" id="name" placeholder="Name" />
-                            </div>
-                            <div class="col-6 col-12-small">
-                                <input type="text" name="email" id="email" placeholder="Email" />
-                            </div>
-                            <div class="col-12">
-                                <input type="text" name="subject" id="subject" placeholder="Subject" />
-                            </div>
-                            <div class="col-12">
-                                <textarea name="message" id="message" placeholder="Message"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <ul class="actions">
-                                    <li><input type="submit" value="Send Message" /></li>
-                                    <li><input type="reset" value="Clear Form" class="alt" /></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-12">
-                    <hr />
-                    <h3>Find me on ...</h3>
-                    <ul class="social">
-                        <li><a href="https://linkedin.com/in/teoh-xin-yee-283377275/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                        <li><a href="https://instagram.com/xiiinyee._" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                        <li><a href="https://github.com/Xinyee610/xyportfolio" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-                    </ul>
-                    <hr />
-                </div>
-            </div>
-            <footer>
-                <ul id="copyright">
-                    <li>&copy; Teoh Xin Yee. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                </ul>
-            </footer>
         </div>
     </article>
 
