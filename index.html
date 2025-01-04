@@ -36,16 +36,19 @@
         }
 
         .skill-bar {
+            position: relative;
             background: #ddd;
-            border-radius: 10px;
+            border-radius: 5px;
+            height: 10px;
             overflow: hidden;
-            margin-bottom: 10px;
+            margin-bottom: 1em;
         }
 
         .skill-bar .progress {
-            background: #4CAF50;
-            height: 20px;
-            transition: width 0.3s ease;
+            background: #007bff;
+            height: 100%;
+            width: 0;
+            transition: width 1s ease-in-out;
         }
     </style>
     <script>
@@ -54,16 +57,24 @@
             const content = event.currentTarget.nextElementSibling;
             content.classList.toggle('visible');
             arrow.style.transform = content.classList.contains('visible') ? 'rotate(90deg)' : 'rotate(0deg)';
+        }
 
-            // Animate skill bars if content becomes visible
-            if (content.classList.contains('visible')) {
-                const progressBars = content.querySelectorAll('.progress');
-                progressBars.forEach(bar => {
-                    const percentage = bar.parentElement.querySelector('.percentage').dataset.percentage;
-                    bar.style.width = percentage + '%';
-                });
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar .progress');
+            skillBars.forEach(bar => {
+                const targetWidth = bar.dataset.percentage;
+                bar.style.width = targetWidth + '%';
+            });
+        }
+
+        function toggleVisibilityAndAnimate(event) {
+            toggleVisibility(event);
+            if (event.currentTarget.nextElementSibling.classList.contains('visible')) {
+                animateSkillBars();
             }
         }
+
+        document.addEventListener('DOMContentLoaded', animateSkillBars);
     </script>
 </head>
 <body class="is-preload">
@@ -153,40 +164,137 @@
                     <section class="box style1">
                         <span class="icon solid featured fa-tools"></span>
                         <h3>Skills</h3>
-                        <button class="toggle-button" onclick="toggleVisibility(event)">Details <span class="toggle-arrow">&#9654;</span></button>
+                        <button class="toggle-button" onclick="toggleVisibilityAndAnimate(event)">Details <span class="toggle-arrow">&#9654;</span></button>
                         <div class="toggle-content">
-                            <p>C++ <span class="percentage" data-percentage="40">40%</span></p>
+                            <p>C++ <span class="percentage" data-percentage="40">0%</span></p>
                             <div class="skill-bar">
-                                <div class="progress" style="width: 0%;"></div>
+                                <div class="progress" data-percentage="40"></div>
                             </div>
 
-                            <p>Problem-Solving <span class="percentage" data-percentage="65">65%</span></p>
+                            <p>Problem-Solving <span class="percentage" data-percentage="65">0%</span></p>
                             <div class="skill-bar">
-                                <div class="progress" style="width: 0%;"></div>
+                                <div class="progress" data-percentage="65"></div>
                             </div>
 
-                            <p>Teamwork <span class="percentage" data-percentage="70">70%</span></p>
+                            <p>Teamwork <span class="percentage" data-percentage="70">0%</span></p>
                             <div class="skill-bar">
-                                <div class="progress" style="width: 0%;"></div>
+                                <div class="progress" data-percentage="70"></div>
                             </div>
 
-                            <p>Leadership <span class="percentage" data-percentage="60">60%</span></p>
+                            <p>Leadership <span class="percentage" data-percentage="60">0%</span></p>
                             <div class="skill-bar">
-                                <div class="progress" style="width: 0%;"></div>
+                                <div class="progress" data-percentage="60"></div>
                             </div>
 
-                            <p>Communication <span class="percentage" data-percentage="50">50%</span></p>
+                            <p>Communication <span class="percentage" data-percentage="50">0%</span></p>
                             <div class="skill-bar">
-                                <div class="progress" style="width: 0%;"></div>
+                                <div class="progress" data-percentage="50"></div>
                             </div>
                         </div>
                     </section>
                 </div>
             </div>
+            <footer>
+                <p>Want to know more?</p>
+                <a href="#projects" class="button large scrolly">Check out my projects</a>
+            </footer>
         </div>
     </article>
 
-    <!-- Remaining Sections -->
+    <!-- Projects -->
+    <article id="projects" class="wrapper style3">
+        <div class="container">
+            <header>
+                <h2>Here’s some subjects I am currently studying.</h2>
+                <p>YEAR 1 SEMESTER 1</p>
+            </header>
+            <div class="row">
+                <div class="col-4 col-6-medium col-12-small">
+                    <article class="box style2">
+                        <a href="#" class="image featured"><img src="image/photo02.jpg" alt="" /></a>
+                        <h3><a href="#">Discrete Structure</a></h3>
+                    </article>
+                </div>
+                <div class="col-4 col-6-medium col-12-small">
+                    <article class="box style2">
+                        <a href="#" class="image featured"><img src="image/photodl.jpg" width="462px" height="255px" alt="" /></a>
+                        <h3><a href="#">Digital Logic</a></h3>
+                    </article>
+                </div>
+                <div class="col-4 col-6-medium col-12-small">
+                    <article class="box style2">
+                        <a href="#" class="image featured"><img src="image/phototis.jpg" width="462px" height="255px" alt="" /></a>
+                        <h3><a href="#">Technology and Information System</a></h3>
+                    </article>
+                </div>
+                <div class="col-4 col-6-medium col-12-small">
+                    <article class="box style2">
+                        <a href="#" class="image featured"><img src="image/photopt1.jpg" width="462px" height="255px" alt="" /></a>
+                        <h3><a href="#">Programming Technique--C++</a></h3>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Contact -->
+    <article id="contact" class="wrapper style4" style="background-color: black; color: white;">
+        <div class="container medium">
+            <header>
+                <h2>Have me make stuff for you.</h2>
+                <p>Let’s get in touch!</p>
+            </header>
+            <div class="row">
+                <div class="col-12">
+                    <form method="post" action="#">
+                        <div class="row">
+                            <div class="col-6 col-12-small">
+                                <input type="text" name="name" id="name" placeholder="Name" />
+                            </div>
+                            <div class="col-6 col-12-small">
+                                <input type="text" name="email" id="email" placeholder="Email" />
+                            </div>
+                            <div class="col-12">
+                                <input type="text" name="subject" id="subject" placeholder="Subject" />
+                            </div>
+                            <div class="col-12">
+                                <textarea name="message" id="message" placeholder="Message"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <ul class="actions">
+                                    <li><input type="submit" value="Send Message" /></li>
+                                    <li><input type="reset" value="Clear Form" class="alt" /></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12">
+                    <hr />
+                    <h3>Find me on ...</h3>
+                    <ul class="social">
+                        <li><a href="https://linkedin.com/in/teoh-xin-yee-283377275/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://instagram.com/xiiinyee._" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="https://github.com/Xinyee610/xyportfolio" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                    <hr />
+                </div>
+            </div>
+            <footer>
+                <ul id="copyright">
+                    <li>&copy; Teoh Xin Yee. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </footer>
+        </div>
+    </article>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
 </html>
