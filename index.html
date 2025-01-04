@@ -49,6 +49,16 @@
             height: 100%;
             width: 0;
             transition: width 1s ease-in-out;
+            animation: progress-animation 2s ease-in-out;
+        }
+
+        @keyframes progress-animation {
+            from {
+                width: 0;
+            }
+            to {
+                width: var(--progress-width);
+            }
         }
 
         .skill-percentage {
@@ -71,6 +81,7 @@
             const skillBars = document.querySelectorAll('.skill-bar .progress');
             skillBars.forEach(bar => {
                 const targetWidth = bar.dataset.percentage;
+                bar.style.setProperty('--progress-width', targetWidth + '%');
                 bar.style.width = targetWidth + '%';
 
                 // Display percentage dynamically
