@@ -11,10 +11,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
-        .hidden {
+        .toggle-button {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            background: none;
+            border: none;
+            font-size: 1.1em;
+            padding: 0;
+        }
+
+        .toggle-arrow {
+            margin-left: 0.5em;
+            transition: transform 0.2s ease;
+        }
+
+        .toggle-content {
             display: none;
+            margin-top: 1em;
+        }
+
+        .toggle-content.visible {
+            display: block;
         }
     </style>
+    <script>
+        function toggleVisibility(event) {
+            const arrow = event.currentTarget.querySelector('.toggle-arrow');
+            const content = event.currentTarget.nextElementSibling;
+            content.classList.toggle('visible');
+            arrow.style.transform = content.classList.contains('visible') ? 'rotate(90deg)' : 'rotate(0deg)';
+        }
+    </script>
 </head>
 <body class="is-preload">
 
@@ -57,8 +85,8 @@
                     <section class="box style1">
                         <span class="icon solid featured fa-graduation-cap"></span>
                         <h3>Education</h3>
-                        <button onclick="toggleVisibility('education-details')">Show Details</button>
-                        <div id="education-details" class="hidden">
+                        <button class="toggle-button" onclick="toggleVisibility(event)">Details <span class="toggle-arrow">&#9654;</span></button>
+                        <div class="toggle-content">
                             🎒 <strong>Primary School 📖</strong><br>
                             School: SJK(C) Nam Hua<br>
                             Location: Tanjung Piandang, Perak<br>
@@ -87,13 +115,15 @@
                     <section class="box style1">
                         <span class="icon solid featured fa-briefcase"></span>
                         <h3>Position</h3>
-                        <p>🏫 <strong>Secondary School Leadership Roles</strong><br>
+                        <button class="toggle-button" onclick="toggleVisibility(event)">Details <span class="toggle-arrow">&#9654;</span></button>
+                        <div class="toggle-content">
+                            🏫 <strong>Secondary School Leadership Roles</strong><br>
                             - Vice Chairman of Lembaga Pengawas Pusat Sumber 📖<br>
                             - Secretary of Bulan Sabit Merah Malaysia (BSMM) 🩺<br><br>
 
                             🎓 <strong>Current Position</strong><br>
-                            - Year 1 Semester 1 Bachelor of Computer Science (Data Engineering) Student
-                        </p>
+                            - Year 1 Semester 1 Bachelor of Computer Science (Data Engineering) Student<br>
+                        </div>
                     </section>
                 </div>
 
@@ -101,13 +131,16 @@
                     <section class="box style1">
                         <span class="icon solid featured fa-tools"></span>
                         <h3>Skills</h3>
-                        <p>Proficient in programming, data analysis, and AI applications.</p>
+                        <button class="toggle-button" onclick="toggleVisibility(event)">Details <span class="toggle-arrow">&#9654;</span></button>
+                        <div class="toggle-content">
+                            Proficient in programming, data analysis, and AI applications.
+                        </div>
                     </section>
                 </div>
             </div>
             <footer>
                 <p>Want to know more?</p>
-                <a href="#projects" class="button large scrolly">Check out my projects</a>
+                <a href="#projects" class="button large scrolly">Check out my subjects</a>
             </footer>
         </div>
     </article>
@@ -200,16 +233,6 @@
     </article>
 
     <!-- Scripts -->
-    <script>
-        function toggleVisibility(id) {
-            const element = document.getElementById(id);
-            if (element.classList.contains('hidden')) {
-                element.classList.remove('hidden');
-            } else {
-                element.classList.add('hidden');
-            }
-        }
-    </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
