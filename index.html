@@ -10,6 +10,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body class="is-preload">
 
@@ -17,8 +22,8 @@
     <nav id="nav">
         <ul class="container">
             <li><a href="#top">Top</a></li>
-            <li><a href="#core">Core</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -40,77 +45,75 @@
         </div>
     </article>
 
-    <!-- Core -->
-<article id="core" class="wrapper style2">
-    <div class="container">
-        <header>
-            <h2>Core Information</h2>
-            <p>Education, Position, and Skills</p>
-        </header>
-        <div class="row aln-center">
-            <div class="col-4 col-6-medium col-12-small">
-                <section class="box style1">
-                    <span class="icon solid featured fa-graduation-cap"></span>
-                    <h3>Education</h3>
-                    <p class="tooltip-trigger">Hover to view details</p>
-                    <div class="tooltip-content">
-                        🎒 <strong>Primary School 📖</strong><br>
-                        School: SJK(C) Nam Hua<br>
-                        Location: Tanjung Piandang, Perak<br>
-                        Years: 2012 - 2017<br><br>
+    <!-- About Me -->
+    <article id="about" class="wrapper style2">
+        <div class="container">
+            <header>
+                <h2>About Me</h2>
+                <p>Education, Position, and Skills</p>
+            </header>
+            <div class="row aln-center">
+                <div class="col-4 col-6-medium col-12-small">
+                    <section class="box style1">
+                        <span class="icon solid featured fa-graduation-cap"></span>
+                        <h3>Education</h3>
+                        <button onclick="toggleVisibility('education-details')">Show Details</button>
+                        <div id="education-details" class="hidden">
+                            🎒 <strong>Primary School 📖</strong><br>
+                            School: SJK(C) Nam Hua<br>
+                            Location: Tanjung Piandang, Perak<br>
+                            Years: 2012 - 2017<br><br>
 
-                        🏫 <strong>Secondary School 🧠</strong><br>
-                        School: SMJK Krian<br>
-                        Location: Parit Buntar, Perak<br>
-                        Years: 2018 - 2022<br><br>
+                            🏫 <strong>Secondary School 🧠</strong><br>
+                            School: SMJK Krian<br>
+                            Location: Parit Buntar, Perak<br>
+                            Years: 2018 - 2022<br><br>
 
-                        🔬 <strong>Foundation in Physical Science 🌌</strong><br>
-                        Institution: SPACE UTM<br>
-                        Location: Skudai, Johor<br>
-                        Years: 2023 - 2024<br><br>
+                            🔬 <strong>Foundation in Physical Science 🌌</strong><br>
+                            Institution: SPACE UTM<br>
+                            Location: Skudai, Johor<br>
+                            Years: 2023 - 2024<br><br>
 
-                        🎓 <strong>University Studies 💻</strong><br>
-                        University: Universiti Teknologi Malaysia (UTM)<br>
-                        Location: Skudai, Johor<br>
-                        Years: 2024 - Present<br>
-                        Program: Bachelor of Computer Science (Data Engineering)
-                    </div>
-                </section>
+                            🎓 <strong>University Studies 💻</strong><br>
+                            University: Universiti Teknologi Malaysia (UTM)<br>
+                            Location: Skudai, Johor<br>
+                            Years: 2024 - Present<br>
+                            Program: Bachelor of Computer Science (Data Engineering)
+                        </div>
+                    </section>
+                </div>
+
+                <div class="col-4 col-6-medium col-12-small">
+                    <section class="box style1">
+                        <span class="icon solid featured fa-briefcase"></span>
+                        <h3>Position</h3>
+                        <p>🏫 <strong>Secondary School Leadership Roles</strong><br>
+                            - Vice Chairman of Lembaga Pengawas Pusat Sumber 📖<br>
+                            - Secretary of Bulan Sabit Merah Malaysia (BSMM) 🩺<br><br>
+
+                            🎓 <strong>Current Position</strong><br>
+                            - Year 1 Semester 1 Bachelor of Computer Science (Data Engineering) Student
+                        </p>
+                    </section>
+                </div>
+
+                <div class="col-4 col-6-medium col-12-small">
+                    <section class="box style1">
+                        <span class="icon solid featured fa-tools"></span>
+                        <h3>Skills</h3>
+                        <p>Proficient in programming, data analysis, and AI applications.</p>
+                    </section>
+                </div>
             </div>
-
-            <div class="col-4 col-6-medium col-12-small">
-                <section class="box style1">
-                    <span class="icon solid featured fa-briefcase"></span>
-                    <h3>Position</h3>
-                    <p class="tooltip-trigger">Hover to view details</p>
-                    <div class="tooltip-content">
-                        🏫 <strong>Secondary School Leadership Roles</strong><br>
-                        - Vice Chairman of Lembaga Pengawas Pusat Sumber 📖<br>
-                        - Secretary of Bulan Sabit Merah Malaysia (BSMM) 🩺<br><br>
-
-                        🎓 <strong>Current Position</strong><br>
-                        - Year 1 Semester 1 Bachelor of Computer Science (Data Engineering) Student<br>
-                    </div>
-                </section>
-            </div>
-
-            <div class="col-4 col-6-medium col-12-small">
-                <section class="box style1">
-                    <span class="icon solid featured fa-tools"></span>
-                    <h3>Skills</h3>
-                    <p>Proficient in programming, data analysis, and AI applications.</p>
-                </section>
-            </div>
+            <footer>
+                <p>Want to know more?</p>
+                <a href="#projects" class="button large scrolly">Check out my projects</a>
+            </footer>
         </div>
-        <footer>
-            <p>Want to know more?</p>
-            <a href="#portfolio" class="button large scrolly">Check out my subjects</a>
-        </footer>
-    </div>
-</article>
+    </article>
 
-    <!-- Portfolio -->
-    <article id="portfolio" class="wrapper style3">
+    <!-- Projects -->
+    <article id="projects" class="wrapper style3">
         <div class="container">
             <header>
                 <h2>Here’s some subjects I am currently studying.</h2>
@@ -197,6 +200,16 @@
     </article>
 
     <!-- Scripts -->
+    <script>
+        function toggleVisibility(id) {
+            const element = document.getElementById(id);
+            if (element.classList.contains('hidden')) {
+                element.classList.remove('hidden');
+            } else {
+                element.classList.add('hidden');
+            }
+        }
+    </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
